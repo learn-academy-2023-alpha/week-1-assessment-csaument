@@ -20,7 +20,7 @@ const fruit4 = "kiwi"
 
 // --------------------1) Create a function that takes in a number and determines if the given number is below boiling point, at boiling point, or above boiling point. Boiling point is 212 degrees Fahrenheit. Use the test variables provided below.
 
-// Pseudo code: Create a function isBoiling that compares an input parameter temperature to 212 degrees fahrenheit and returns a string that specifies whether the input is below, at, or above the boiling point of water at sea level.
+// Pseudo code: Create a function isBoiling that compares an input parameter temperature to 212 degrees fahrenheit and returns a string that specifies whether the input is below, at, or above the boiling point of water at sea level. This version uses a local constant to allow future changes to update the boiling temperature for celcius, kelvin, or other scales. A series of if/else if statements will handle errors and expected conditions.
 
 const isBoiling = (temperature) => {
     // Create a constant to define the boiling temperature
@@ -54,7 +54,7 @@ console.log(isBoiling(temp3))
 
 // --------------------2) Create the code that will combine the two arrays and return the length using the test variables provided below.
 
-// Pseudo code: Create a function combineArrays that takes two input array parameters and returns an integer/number that counts the total number of items in both arrays.
+// Pseudo code: Create a function combineArrays that takes two input array parameters and returns an integer/number that counts the total number of items in both arrays. The return value is calculated as the arithmetic sum of the length of both input arrays. This version implements error handling and returns a string message when either of the inputs is not an array.
 
 const combineArrays = (array1, array2) => {
     if (array1 instanceof Array && array2 instanceof Array){ // Checks to confirm that both inputs are Arrays
@@ -80,7 +80,7 @@ console.log(combineArrays(1,[0,1])) // Number; code returned NaN.
 
 // --------------------3) Create the code that will reverse the letters of a string using the test variable provided below.
 
-// Pseudo code: Create a function reverseString that takes as input a string parameter and returns a string with the characters reversed.
+// Pseudo code: Create a function reverseString that takes as input a string parameter and returns a string with the characters reversed. This is accomplished using built-in methods for string processing to split the string into an array of characters, reverse the order of the array, and then join the array into a new string. This version implements error handling for non-string inputs by returning an error message.
 
 const reverseString = (inputString) => {
     if(inputString.constructor == String){ // Checks to confirm that the input is a String; instanceof did not work correctly due to the object wrapper
@@ -96,7 +96,7 @@ console.log(reverseString(currentCohort))
 
 // --------------------4) Create the code that will return the last index of the given value from the array using the test variables provided below.
 
-// Pseudo code: Create a function findLast that takes as input two parameters. The first input is a number and the second input is an array. The function returns the index of the last instance of the first parameter in the second parameter. Note: this implementation does not accept characters and strings as inputs.
+// Pseudo code: Create a function findLast that takes as input two parameters. The first input is a number and the second input is an array. The function returns the index of the last instance of the first parameter in the second parameter. The built-in method for finding the last index of a value in an array is used, returning the index of that value. If the value is not found in the index, then a descriptive message is returned. This version implements error handling to confirm that a number and an array are provided, returning an error message if different datatypes are passed to the function.
 
 const findLast = (myValue, myArray) => {
     if (!(myValue.constructor == Number) || !(myArray instanceof Array)){ // Checks to confirm that the appropriate datatypes were provided; instanceof did not work correctly for numbers due to the object wrapper
@@ -122,10 +122,10 @@ console.log(findLast(givenValue2, myNumbers))
 
 // --------------------5) Create the code that will sort all the numbers in an array from largest to smallest. Use the test variables provided below.
 
-// Pseudo code: Create a function easySort that takes as input an array of numbers and returns as output the same numbers listed in descending order.
+// Pseudo code: Create a function easySort that takes as input an array of numbers and returns as output the same numbers listed in descending order. This implements the built-in sorting function in javascript, allowing cleaner syntax than the higher order function normally requires.
 
 const easySort = (myArray) => {
-    return myArray.sort(function(a,b){return b-a})
+    return myArray.sort(function(a,b){return b-a}) // Uses built-in higher order function to sort values in descending order (b-a)
 }
 
 const sanDiegoSummerTemperatures = [79, 80, 72, 73, 82, 77, 76]
